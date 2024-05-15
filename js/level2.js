@@ -17,8 +17,8 @@ function moveRight(){
         shipImageJs.style.marginLeft = newLeft + '%';
         }
         else{
-            alert("Player 2 Wins")
-            console.log(playerTwoScore)
+            alert("Player 2 Wins with score: "+playerTwoScore)
+            // console.log(playerTwoScore)
             location.reload(true);
 
         }
@@ -32,15 +32,15 @@ function moveLeft(){
 
         const currentLeft = parseFloat(shipImageJs.style.marginLeft)||20;
        
-        console.log("left: "+currentLeft)
+        // console.log("left: "+currentLeft)
         const newLeft = currentLeft - 5;
         // console.log(newLeft)
         if(newLeft>0){
         shipImageJs.style.marginLeft = newLeft + '%';
         }
         else{
-            alert("Player 1 Wins");
-            console.log(playerOneScore);
+            alert("Player 1 Wins with score: "+playerOneScore);
+            // console.log(playerOneScore);
             location.reload(true);
         }
 }
@@ -78,16 +78,25 @@ let playerChance=1;
 let playerOneScore=0;
 let playerTwoScore=0;
 let timeLeft=20;
+let timerInterval;
 
 function winnerSelector(){
+    console.log("winner 1: "+playerOneScore)
+    console.log("winner 2: "+playerTwoScore)
+
     if(playerOneScore>playerTwoScore){
-        alert("Player 1 wins with a "+playerOneScore-playerTwoScore+" point lead")
+        alert("Player 1 wins with a score: "+playerOneScore)
+        location.reload(true)
     }
-    else if(playerTwoScore>playerTwoScore){
-        alert("Player 2 wins with a "+playerTwoScore-playerOneScore+" point lead")
+    else if(playerOneScore<playerTwoScore){
+        alert("Player 2 wins with a score: "+playerTwoScore)
+        location.reload(true)
+
     }
     else {
         alert("Game ends with a Tie")
+        location.reload(true)
+
     }
 }
 
@@ -109,7 +118,7 @@ async function fetchQuizQuestions() {
      
                 renderQuestion();
 
-     
+                
                 function renderQuestion() {
                     quizContainer.innerHTML = ''; // Clear previous content
      
@@ -148,12 +157,12 @@ async function fetchQuizQuestions() {
                     playerTwoColorChange();
                     playerChance++;
                 }
-
                 
+                clearInterval(timerInterval)
 
-                setInterval(() => {
+                timerInterval=setInterval(() => {
                         timeLeft--;
-                        console.log("Set Interval: "+timeLeft)
+                        // console.log("Set Interval: "+timeLeft)
                         updateTimerDisplay();
                         if (timeLeft <= 0) {
                             questionIndex++;
@@ -166,14 +175,14 @@ async function fetchQuizQuestions() {
                                 location.reload(true);
                             }
                         }
-                    }, 1500);
+                    }, 1000);
                 
                 
                 }
 
                 function updateTimerDisplay() {
                     document.getElementById("timeLeft").textContent = timeLeft;
-                    console.log("update timer: "+document.getElementById("timeLeft").textContent)
+                    // console.log("update timer: "+document.getElementById("timeLeft").textContent)
                 }
 
                 
@@ -181,22 +190,28 @@ async function fetchQuizQuestions() {
                 function checkAnswer(selectedAnswer) {
                     const question = questions[questionIndex];
                     const correctAnswerKey = Object.keys(question.correct_answers).find(key => question.correct_answers[key] === 'true');
-                    console.log(correctAnswerKey)
                     // console.log(correctAnswerKey)
-                    console.log(selectedAnswer)
+                    // console.log(correctAnswerKey)
+                    // console.log(selectedAnswer)
                     if ((selectedAnswer+"_correct") === correctAnswerKey) {  //because in the api documentation, the key is defined as answera_correct
                         // alert('Correct!');
-                        if(playerChance%2!=0){
-                            moveRight();
+                        if((playerChance-1)%2!=0){
+                            moveLeft();
                             playerOneScore++;
+                            console.log("player chance: "+(playerChance-1))
+                            console.log("Player one score: "+playerOneScore);
                         }
                         else{
-                            moveLeft();
+                            moveRight();
                             playerTwoScore++;
+                            console.log("player chance: "+(playerChance-1))
+                            console.log("Player two score: "+playerTwoScore);
+
                         }
-                    } else {
-                        alert('Wrong!');
-                    }
+                    } 
+                    // else {
+                    //     alert('Wrong!');
+                    // }
      
                     questionIndex++;
                     if (questionIndex < questions.length) {
