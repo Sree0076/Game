@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Profile</title>
+    <link rel="stylesheet" href="profilepage.css">
+</head>
+<body >
+  <div class="underlay profile-page"></div>
+    <div id="player-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-btn" class="close">&times;</span>
+          <h2>Enter Player Name</h2>
+          <form>
+            <label for="player">Player:</label>
+            <input type="text" id="player" placeholder="Enter player name">
+            <button id="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div >
+        <div class="player-avatar" id="player-avatar">
+
+        </div>
+        <div class="player-name" id="player-name"></div>
+        <div class="player-highscore" id="player-highscore"></div>
+        <div class="match-list">
+            <ul id="match-name-score">
+            </ul>
+        </div>
+      </div>
+
+    
+      <script src="profilepage.js"></script>
+</body>
+</html>
