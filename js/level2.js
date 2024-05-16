@@ -1,7 +1,4 @@
 
-
-
-
 function moveRight(){
     const shipImageJs=document.getElementById("shipImage")
      // console.log(shipImageJs.style.marginLeft)
@@ -143,7 +140,7 @@ function winnerSelector(){
 
     }
     else {
-        alert("Quiz over. Game ends with a Tie")
+        alert("Quiz over. Its a tie with score: "+playerOneScore)
         location.reload(true)
         // Swal.fire({
         //     title: 'Tie',
@@ -233,6 +230,7 @@ async function fetchQuizQuestions() {
                                 renderQuestion();
                                 timeLeft=20;
                             } else {
+                                clearInterval(timerInterval)
                                 // quizContainer.innerHTML = '<p>Quiz completed!</p>';
                                 winnerSelector();
                                 // location.reload(true);
@@ -263,14 +261,15 @@ async function fetchQuizQuestions() {
                             moveLeft();
                            
                             // console.log("player chance: "+(playerChance-1))
-                            // console.log("Player one score: "+playerOneScore);
+                            console.log("Player one score: "+playerOneScore);
                         }
                         else{
+                            // console.log("player 2")
                             playerTwoScore++;
                             moveRight();
                             
                             // console.log("player chance: "+(playerChance-1))
-                            // console.log("Player two score: "+playerTwoScore);
+                            console.log("Player two score: "+playerTwoScore);
 
                         }
                     } 
@@ -279,12 +278,13 @@ async function fetchQuizQuestions() {
                     // }
      
                     questionIndex++;
-                    console.log("question index: "+questionIndex)
-                    console.log("questions length: "+questions.length)
+                    // console.log("question index: "+questionIndex)
+                    // console.log("questions length: "+questions.length)
                     if (questionIndex < questions.length) {
                         renderQuestion();
                         timeLeft=20;
                     } else {
+                        clearInterval(timerInterval)
                         // quizContainer.innerHTML = '<p>Quiz completed!</p>';
                          winnerSelector();
                         // location.reload(true);                    
