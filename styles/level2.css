@@ -1,176 +1,108 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* border-style: solid;
-    border-color: blue; */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 #seaVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-
-#shipImage{
-
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 125px;
-    margin-bottom: 150px;
-    padding: 0%;
-    /* border-style: solid;
-    border-color: blue; */
-   
-}  
-
-
-
- #quiz{
-    
-    /* background-color: white; */
-    height: auto;
-    width: 100%;
-    border-width: 100%; 
-    /* border-style: solid;
-    border-color: black; */
-    position: absolute;
-    z-index: 2;
-    bottom: 4px;
-    background-color: transparent;
-
-    
+#shipImage {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 125px;
+  margin-bottom: 150px;
+  padding: 0%;
 }
 
-/* #question{
-    align-self: center;
+#quiz {
+  height: auto;
+  width: 100%;
+  border-width: 100%;
+
+  position: absolute;
+  z-index: 2;
+  bottom: 4px;
+  background-color: transparent;
 }
 
-.answers{
+#playerOne {
+  color: white;
+  position: absolute;
+  z-index: 2;
+  font-size: 200%;
+  right: 85%;
 
-}  */
+  top: 5%;
+  padding: 2%;
 
-#playerOne{
-    color: white;
-    position: absolute;
-    z-index: 2;
-    font-size: 200%;
-    right: 85%;
-    /* border-style: solid;
-    border-color: blue; */
-    top: 5%;
-    padding: 2%;
-    /* background-color: red; */
-    filter: opacity(0.9);
-    border-radius: 10px;
+  filter: opacity(0.9);
+  border-radius: 10px;
 }
 
+#playerTwo {
+  color: white;
+  position: absolute;
+  font-size: 200%;
+  top: 5%;
+  padding: 2%;
 
-#playerTwo{
-    color: white;
-    position: absolute;
-    font-size: 200%;
-    top: 5%;
-    padding: 2%;
-    /* border-style: solid;
-    border-color: blue; */
-    left: 85%;
-    /* background-color: red; */
-    filter: opacity(0.9);
-    border-radius: 10px;
+  left: 85%;
+
+  filter: opacity(0.9);
+  border-radius: 10px;
 }
-
-/* quiz styling from here */
-
-/* .quiz-container {
-    position: absolute;
-    background: white;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-    top:-1000px;
-} */
 
 .question {
-    /* margin-bottom: 20px; */
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* border-style: solid;
-    border-color: yellow; */
-    filter: opacity();
-    
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  filter: opacity();
 }
-.question h2{
-    /* border-style: solid;
-    border-color: yellow; */
-    padding: 1%;
-    border-radius: 10px;
-    background-color: grey;
-    filter: opacity(0.9);
-    
+.question h2 {
+  padding: 1%;
+  border-radius: 10px;
+  background-color: grey;
+  filter: opacity(0.9);
 }
 
 .answers {
-    list-style: none;
-    padding:0%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    /* border-style: solid;
-    border-color: blueviolet; */
-    background-color:grey;
-    filter: opacity(0.9);
-    border-radius: 10px;
-    align-items: center;
-    
+  list-style: none;
+  padding: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  background-color: grey;
+  filter: opacity(0.9);
+  border-radius: 10px;
+  align-items: center;
 }
 
 .answers li {
-    margin: 10px;
-    width: 100px;
-    
+  margin: 10px;
+  width: 100px;
 }
-#timer{
-    position: absolute;
-    z-index: 3;
-    background-color: red;
-    border-radius: 10px;
-    padding: 10px;
-    filter: opacity(0.9);
-    font-size: 20px;
-    left:45%;
-    bottom: 85%;
-    color: white;
+#timer {
+  position: absolute;
+  z-index: 3;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  filter: opacity(0.9);
+  font-size: 20px;
+  left: 45%;
+  bottom: 85%;
+  color: white;
 }
-
-
-/* #endPopUp{
-    position: absolute;
-    z-index: 4;
-    background-color: grey;
-    height: auto;
-    width: auto;
-    font-size: 200%;
-    padding: 5%;
-    left: 30%;
-    bottom:35%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    visibility:hidden;
-}
-
-#endPopUpText{
-    
-} */
