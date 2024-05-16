@@ -17,7 +17,20 @@ function moveRight(){
         shipImageJs.style.marginLeft = newLeft + '%';
         }
         else{
-            alert("Player 2 Wins with score: "+playerTwoScore)
+            alert("Player 2 has reached the edge and wins with score: "+playerTwoScore)
+
+        // Example usage of SweetAlert2
+        // Swal.fire({
+        // title: 'Player 2 Wins',
+        // text: 'Score: '+ playerTwoScore,
+        // confirmButtonText: 'Restart'
+        // }).then((result)=>{
+        //     if(result.isConfirmed){
+        //     location.reload(true);
+
+        //     }
+        // });
+  
             // console.log(playerTwoScore)
             location.reload(true);
 
@@ -39,24 +52,40 @@ function moveLeft(){
         shipImageJs.style.marginLeft = newLeft + '%';
         }
         else{
-            alert("Player 1 Wins with score: "+playerOneScore);
+            // document.getElementById("endPopUpText").textContent="Player 1 Wins with score: "+playerOneScore;
+            // document.getElementById("endPopUp").style.visibility.visible;
+            alert("Player 1 has reached the edge and wins with score: "+playerOneScore);
             // console.log(playerOneScore);
             location.reload(true);
+            // Swal.fire({
+            //     title: 'Player 1 Wins',
+            //     text: 'Score: '+ playerOneScore,
+            //     confirmButtonText: 'Restart'
+            //     }).then((result)=>{
+            //         if(result.isConfirmed){
+            //         location.reload(true);
+        
+            //         }
+            //     });
         }
 }
 
 function playerOneColorChange(){
     const playerOne=document.getElementById("playerOne")
     const playerTwo=document.getElementById("playerTwo")
-    playerOne.style.color='green';
-    playerTwo.style.color='red';
+    playerOne.style.backgroundColor='green';
+    playerTwo.style.backgroundColor='grey';
+    playerOne.style.opacity=0.9;
+    playerTwo.style.opacity=0.5;
 }
 
 function playerTwoColorChange(){
     const playerOne=document.getElementById("playerOne")
     const playerTwo=document.getElementById("playerTwo")
-    playerOne.style.color='red';
-    playerTwo.style.color='green';
+    playerOne.style.backgroundColor='grey';
+    playerTwo.style.backgroundColor='green';
+    playerTwo.style.opacity=0.9;
+    playerOne.style.opacity=0.5;
 }
 
 
@@ -81,21 +110,51 @@ let timeLeft=20;
 let timerInterval;
 
 function winnerSelector(){
-    console.log("winner 1: "+playerOneScore)
-    console.log("winner 2: "+playerTwoScore)
+    // console.log("winner 1: "+playerOneScore)
+    // console.log("winner 2: "+playerTwoScore)
 
     if(playerOneScore>playerTwoScore){
-        alert("Player 1 wins with a score: "+playerOneScore)
+        alert("Quiz over. Player 1 wins with a score: "+playerOneScore)
         location.reload(true)
+        // Swal.fire({
+        //     title: 'Player 1 Wins',
+        //     text: 'Score: '+ playerOneScore,
+        //     confirmButtonText: 'Restart'
+        //     }).then((result)=>{
+        //         if(result.isConfirmed){
+        //         location.reload(true);
+    
+        //         }
+        //     });
     }
     else if(playerOneScore<playerTwoScore){
-        alert("Player 2 wins with a score: "+playerTwoScore)
+        alert("Quiz over. Player 2 wins with a score: "+playerTwoScore)
         location.reload(true)
+        // Swal.fire({
+        //     title: 'Player 2 Wins',
+        //     text: 'Score: '+ playerTwoScore,
+        //     confirmButtonText: 'Restart'
+        //     }).then((result)=>{
+        //         if(result.isConfirmed){
+        //         location.reload(true);
+    
+        //         }
+        //     });
 
     }
     else {
-        alert("Game ends with a Tie")
+        alert("Quiz over. Game ends with a Tie")
         location.reload(true)
+        // Swal.fire({
+        //     title: 'Tie',
+        //     text: 'Game over',
+        //     confirmButtonText: 'Restart'
+        //     }).then((result)=>{
+        //         if(result.isConfirmed){
+        //         location.reload(true);
+    
+        //         }
+        //     });
 
     }
 }
@@ -103,8 +162,10 @@ function winnerSelector(){
 
 
 async function fetchQuizQuestions() {
-    const response = await fetch('https://quizapi.io/api/v1/questions?apiKey=9mEY0FIxQz8NMwEB0o8CC1hlaOaoHyLcKTOkg5AT&limit=10&category=Linux&difficulty=easy');
+    // const response = await fetch('https://quizapi.io/api/v1/questions?apiKey=9mEY0FIxQz8NMwEB0o8CC1hlaOaoHyLcKTOkg5AT&limit=10&category=Linux&difficulty=easy');
+    const response = await fetch('../json/quiz.json');
                 const questions = await response.json();
+                // console.log(questions)
                 return questions;
             }
 
@@ -166,13 +227,15 @@ async function fetchQuizQuestions() {
                         updateTimerDisplay();
                         if (timeLeft <= 0) {
                             questionIndex++;
+                        
                             if (questionIndex < questions.length) {
+                           
                                 renderQuestion();
                                 timeLeft=20;
                             } else {
                                 // quizContainer.innerHTML = '<p>Quiz completed!</p>';
                                 winnerSelector();
-                                location.reload(true);
+                                // location.reload(true);
                             }
                         }
                     }, 1000);
@@ -196,16 +259,18 @@ async function fetchQuizQuestions() {
                     if ((selectedAnswer+"_correct") === correctAnswerKey) {  //because in the api documentation, the key is defined as answera_correct
                         // alert('Correct!');
                         if((playerChance-1)%2!=0){
-                            moveLeft();
                             playerOneScore++;
-                            console.log("player chance: "+(playerChance-1))
-                            console.log("Player one score: "+playerOneScore);
+                            moveLeft();
+                           
+                            // console.log("player chance: "+(playerChance-1))
+                            // console.log("Player one score: "+playerOneScore);
                         }
                         else{
-                            moveRight();
                             playerTwoScore++;
-                            console.log("player chance: "+(playerChance-1))
-                            console.log("Player two score: "+playerTwoScore);
+                            moveRight();
+                            
+                            // console.log("player chance: "+(playerChance-1))
+                            // console.log("Player two score: "+playerTwoScore);
 
                         }
                     } 
@@ -214,18 +279,22 @@ async function fetchQuizQuestions() {
                     // }
      
                     questionIndex++;
+                    console.log("question index: "+questionIndex)
+                    console.log("questions length: "+questions.length)
                     if (questionIndex < questions.length) {
                         renderQuestion();
                         timeLeft=20;
                     } else {
                         // quizContainer.innerHTML = '<p>Quiz completed!</p>';
                          winnerSelector();
-                        location.reload(true);                    
+                        // location.reload(true);                    
                     }
                 }
             }
      
             document.addEventListener('DOMContentLoaded', renderQuiz);
+
+           
 
 
 

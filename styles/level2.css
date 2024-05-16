@@ -56,7 +56,7 @@ body, html {
 }  */
 
 #playerOne{
-    color: red;
+    color: white;
     position: absolute;
     z-index: 2;
     font-size: 200%;
@@ -65,14 +65,14 @@ body, html {
     border-color: blue; */
     top: 5%;
     padding: 2%;
-    background-color: gray;
+    /* background-color: red; */
     filter: opacity(0.9);
     border-radius: 10px;
 }
 
 
 #playerTwo{
-    color: red;
+    color: white;
     position: absolute;
     font-size: 200%;
     top: 5%;
@@ -80,7 +80,7 @@ body, html {
     /* border-style: solid;
     border-color: blue; */
     left: 85%;
-    background-color: gray;
+    /* background-color: red; */
     filter: opacity(0.9);
     border-radius: 10px;
 }
@@ -115,7 +115,7 @@ body, html {
     border-color: yellow; */
     padding: 1%;
     border-radius: 10px;
-    background-color: gray;
+    background-color: grey;
     filter: opacity(0.9);
     
 }
@@ -128,9 +128,10 @@ body, html {
     flex-direction: row;
     /* border-style: solid;
     border-color: blueviolet; */
-    background-color: grey;
+    background-color:grey;
     filter: opacity(0.9);
     border-radius: 10px;
+    align-items: center;
     
 }
 
@@ -142,12 +143,34 @@ body, html {
 #timer{
     position: absolute;
     z-index: 3;
-    background-color: grey;
+    background-color: red;
     border-radius: 10px;
     padding: 10px;
     filter: opacity(0.9);
     font-size: 20px;
     left:45%;
     bottom: 85%;
-
+    color: white;
 }
+
+
+/* #endPopUp{
+    position: absolute;
+    z-index: 4;
+    background-color: grey;
+    height: auto;
+    width: auto;
+    font-size: 200%;
+    padding: 5%;
+    left: 30%;
+    bottom:35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    visibility:hidden;
+}
+
+#endPopUpText{
+    
+} */

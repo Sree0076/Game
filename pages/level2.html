@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 2</title>
-    <link rel="stylesheet" href="css\level2.css">
+    <link rel="stylesheet" href="../styles/level2.css">
+
+    <!-- Using the SweetAlert2 CDN -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+
+    
+
 
 </head>
 <body>
     <video autoplay muted loop id="seaVideo">
-        <source src="assets\sea.mp4" type="video/mp4">
+        <source src="../assets/sea.mp4" type="video/mp4">
         
     </video>
+    <audio autoplay loop><source src="../assets/SeaAudio.mp3" type="audio/mpeg"></audio>    
     <!-- <div id="seaImageContainer">
         <img id="seaImage" src="assets\ship.png" alt="Image">
     </div> -->
-    <img id="shipImage" src="assets\ship.png">
+    <img id="shipImage" src="../assets/ship.png">
     <!-- <div id="quiz">
         <label id="question">Question 1</label>
         <div class="answers">
@@ -39,6 +47,9 @@
         <div id="quiz"></div>
     <!-- </div>   -->
     <div id="timer">Time left: <span id="timeLeft">20</span> s</div>
-    <script src="js\level2.js"></script> 
+
+    <!-- <div id="endPopUp"><span id="endPopUpMessage"></span>test</div> -->
+
+    <script src="../js/level2.js"></script> 
 </body>
 </html>
