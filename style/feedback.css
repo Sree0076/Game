@@ -3,53 +3,20 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("../assets/forrest_bg.jpg");
-    /* background-repeat: no-repeat; */
-    /* background-position: center;  */
-    /* background-size: cover; */
-    /* position:sticky; */ 
     }
 
-
-
-/* .container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-content: center;
-} */
-
 .container{
-    margin-right: 400px;
-    margin-left: 400px;
+    background: rgba(209, 184, 209, 0.7);
+    margin-right: 300px;
+    margin-left: 300px;
     margin-top: 80px;
     height: 500px;
     text-align: center;
-    background-color: white;
     border-radius: 10px;
     overflow-y: scroll;
     scrollbar-width: none;
 }
 
-
-
-.card{
-    background: rgb(130, 57, 176 ,0.5);
-    text-align: center;
-    position:relative;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    padding: 50px;
-    top: 50px;
-    width: 350px;
-    height: 400px;
-    opacity:1;
-}
-
-/* .card-data {
-    z-index: 10;
-    opacity:1 !important;
-} */
 
 .heading{
     padding-top: 20px;
@@ -59,37 +26,23 @@ body {
 }
 
 .inputbox{
-    width: 350px ;
+    width: 400px ;
     height: 30px;
     border-radius: 10px;
-    /* -webkit-border-radius: 20px; */
-    /* -moz-border-radius: 20px; */
 }
 
-/* .text-span{
-    font-size: 20px;
-    color: rgb(201, 176, 224);
-} */
 
-/* .thumb{
-    height: 50px;
-    width: 50px;
-    fill: rgb(0, 0, 0);
-    background-color: rgb(106, 100, 222);
-    border-radius: 100%;
-} */
-/* 
-#down-thumb {
-    rotate:180deg;
-} */
-
-/* #submit-button {
-    color: yellowgreen;
-    background-color: blueviolet;
-} */
 .question1{
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.question2{
+    margin: auto;
+    text-align: left;
+    width: 400px;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .imojis{
@@ -142,6 +95,10 @@ body {
     outline: 2px solid #0f0;
   }
 
+  .star{
+    font-size: xx-large;
+    
+  }
   .rated{
     color: orange;
   }
