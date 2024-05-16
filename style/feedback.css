@@ -1,0 +1,147 @@
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../assets/forrest_bg.jpg");
+    /* background-repeat: no-repeat; */
+    /* background-position: center;  */
+    /* background-size: cover; */
+    /* position:sticky; */ 
+    }
+
+
+
+/* .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: center;
+} */
+
+.container{
+    margin-right: 400px;
+    margin-left: 400px;
+    margin-top: 80px;
+    height: 500px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+
+
+.card{
+    background: rgb(130, 57, 176 ,0.5);
+    text-align: center;
+    position:relative;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding: 50px;
+    top: 50px;
+    width: 350px;
+    height: 400px;
+    opacity:1;
+}
+
+/* .card-data {
+    z-index: 10;
+    opacity:1 !important;
+} */
+
+.heading{
+    padding-top: 20px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+
+}
+
+.inputbox{
+    width: 350px ;
+    height: 30px;
+    border-radius: 10px;
+    /* -webkit-border-radius: 20px; */
+    /* -moz-border-radius: 20px; */
+}
+
+/* .text-span{
+    font-size: 20px;
+    color: rgb(201, 176, 224);
+} */
+
+/* .thumb{
+    height: 50px;
+    width: 50px;
+    fill: rgb(0, 0, 0);
+    background-color: rgb(106, 100, 222);
+    border-radius: 100%;
+} */
+/* 
+#down-thumb {
+    rotate:180deg;
+} */
+
+/* #submit-button {
+    color: yellowgreen;
+    background-color: blueviolet;
+} */
+.question1{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.imojis{
+    font-size:xx-large;
+}
+
+.goodorbad{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.submitbutton{
+    color: white;
+    background-color: rgb(0, 102, 255);
+    padding: 10px;
+    border-radius: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.thumbs{
+    padding: 5px;
+    height: 30px;
+}
+
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  [type=radio]:checked + img {
+    outline: 2px solid #f00;
+  }
+
+  [type=radio] + span {
+    cursor:pointer;
+  }
+  
+  [type=radio]:checked + span {
+    outline: 2px solid #0f0;
+  }
+
+  .rated{
+    color: orange;
+  }
