@@ -18,11 +18,14 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-            <div class="side-icon"><a href="profilepage.html"><img src="/assets-loading/duck-electrician-cartoon-style_714091-35793.avif" class="avatar"></a></div>
-            <div class="side-icon" ><a id="volume-control"><img src="/assets-loading/sound-speaker_648765-1939.avif" class="avatar"></a></div>
+            <div class="side-icon"><a href="profilepage.html" ><img src="/assets/duck-electrician-cartoon-style_714091-35793.avif" class="avatar"></a></div>
+            <div class="side-icon" ><a id="volume-control"><img src="/assets/sound-speaker_648765-1939.avif" class="avatar"></a></div>
             <div id="volume-modal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
+                <div class="volume-slider">
+                  <div id="volume-bar"></div>
+                </div>
                 <div class="buttons-volume">
                   <button id="increase-volume">➕</button>
                   <button id="decrease-volume">➖</button>
@@ -30,38 +33,40 @@
               
               </div>
             </div>
-            <div class="side-icon"><a><img src="/assets-loading/icons8-levels-64.png" class="avatar"></a></div>
-            <div class="side-icon"  ><a id="quitgame"><img src="/assets-loading/icons8-quit-48.png" class="avatar"></a></div>
+            <div class="side-icon"><a><img src="/assets/icons8-levels-64.png" class="avatar"></a></div>
+            <div class="side-icon"  ><a id="quitgame"><img src="/assets/icons8-quit-48.png" class="avatar"></a></div>
             <div id="quitModal" class="modal">
               <div class="modal-content">
-                <p>Do you really want to quit?</p>
+                <p style="color: white;">Do you really want to quit?</p>
+                <div class="buttons">
                 <button id="yesButton">Yes</button>
                 <button id="noButton">No</button>
               </div>
+              </div>
             </div>
             <form class="player1-name">
-              <img id="name-board1" src="/assets-loading/Screenshot 2024-05-15 142040.png" height="100px">
-                <input type="text" class="form-group form-control" placeholder="Enter player1 Name">
+              <img id="name-board1" src="/assets/Screenshot 2024-05-15 142040.png" height="100px">
+                <input type="text" id="player1" class="form-group form-control" placeholder="Enter player1 Name">
             </form>
            
         </div>
         <div class="col center-play-button">
-          <a href="#"><img class="logo" src="/assets-loading/Untitled design (8).png" width="250px" height="250px"></a>
+          <a onclick="getdata()" href=""><img class="logo" src="/assets/Untitled design (8).png" width="250px" height="250px"></a>
         </div>
         <div class="col">
             <form class="player2-name">
-              <img id="name-board2" src="/assets-loading/Screenshot 2024-05-15 142040.png" height="100px">
-                <input type="text" class="form-group form-control" placeholder="Enter player2 Name">
+              <img id="name-board2" src="/assets/Screenshot 2024-05-15 142040.png" height="100px">
+                <input type="text" id="player2" class="form-group form-control" placeholder="Enter player2 Name">
             </form>
            
         </div>  
       </div>
     </div>
-    <img class="tug-war-image" src="/assets-loading/sharedimage.png">
+    <img class="tug-war-image" src="/assets/sharedimage.png">
     <audio id="backgroundSound"  loop>
-        <source src="/assets-loading/big-band-show-146321.mp3" type="audio/mpeg">
+        <source src="/assets/big-band-show-146321.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <script src="/script/landingpage.js"></script>
+    <script src="/js/landingpage.js"></script>
   </body>
 </html>
