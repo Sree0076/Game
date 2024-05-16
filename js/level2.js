@@ -54,15 +54,15 @@ function playerTwoColorChange() {
   playerOne.style.opacity = 0.5;
 }
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "2") {
-    moveRight();
-    playerTwoColorChange();
-  } else if (event.key === "1") {
-    moveLeft();
-    playerOneColorChange();
-  }
-});
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === "2") {
+//     moveRight();
+//     playerTwoColorChange();
+//   } else if (event.key === "1") {
+//     moveLeft();
+//     playerOneColorChange();
+//   }
+// });
 
 let playerChance = 1;
 let playerOneScore = 0;
@@ -176,18 +176,21 @@ async function renderQuiz() {
 
     if (selectedAnswer + "_correct" === correctAnswerKey) {
       //because in the api documentation, the key is defined as answera_correct
+      document.getElementById("correctAnswerAudio").play();
 
       if ((playerChance - 1) % 2 != 0) {
         playerOneScore++;
         moveLeft();
 
-        console.log("Player one score: " + playerOneScore);
+        // console.log("Player one score: " + playerOneScore);
       } else {
         playerTwoScore++;
         moveRight();
 
-        console.log("Player two score: " + playerTwoScore);
+        // console.log("Player two score: " + playerTwoScore);
       }
+    } else {
+      document.getElementById("wrongAnswerAudio").play();
     }
 
     questionIndex++;

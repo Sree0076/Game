@@ -88,6 +88,7 @@ html {
   filter: opacity(0.9);
   border-radius: 10px;
   align-items: center;
+  justify-content: center;
 }
 
 .answers li {
