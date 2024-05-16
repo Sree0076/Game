@@ -6,7 +6,7 @@ body {
     }
 
 .container{
-    background: rgba(209, 184, 209, 0.7);
+    background: rgba(229, 228, 234, 0.7);
     margin-right: 300px;
     margin-left: 300px;
     margin-top: 80px;
@@ -67,6 +67,10 @@ body {
     margin-bottom: 15px;
 }
 
+.submitbutton:hover{
+  background-color: rgb(9, 28, 57);
+}
+
 .thumbs{
     padding: 5px;
     height: 30px;
@@ -101,4 +105,54 @@ body {
   }
   .rated{
     color: orange;
+  }
+
+  .notRated{
+    color:black;
+  }
+
+  /* .display{
+    margin-top: 30px;
+    padding-top: 100px;
+  } */
+
+  .feedbackTable{
+    text-align: left;
+    color: rgb(1, 3, 23);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: large;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: rgba(235, 233, 235, 0.5);
+  }
+
+  .feedbackTable tr{
+    background: rgba(142, 139, 142, 0.5);
+  }
+
+
+  .buttonfb{
+    background-color: blue;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: large;
+  }
+
+  .buttonfb:hover{
+    background-color: rgb(13, 13, 124);
+  }
+
+  #displayFeedbackButton{
+    float: right;
+   
+  }
+  #feedbackFormButton{
+    float: left;
   }
