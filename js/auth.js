@@ -81,7 +81,6 @@ async function fetchData(email) {
         const db = getDatabase();
         const dbRef = ref(db);
         
-        
         const snapshot = await get(child(dbRef, 'Palyers/'+email.split('@')[0]));
         
         if (snapshot.exists()) {
@@ -100,9 +99,31 @@ async function fetchData(email) {
     } catch (error) {
         console.error("Error fetching data:", error);
     }
-    window.location.href = "landinpage.html";
+    fetchScore();
+    
 }
-
+async function fetchScore() {
+    try {
+         console.log("score")
+        const db = getDatabase();
+        const dbRef = ref(db);
+        
+        const snapshot = await get(child(dbRef, 'Palyers/'));
+        
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+            const myArray = Object.values(snapshot.val());
+            localStorage.setItem('userData', JSON.stringify(myArray));
+            console.log(myArray)
+          
+        } else {
+            console.log("No data available for", ('Players/'));
+        }
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+     window.location.href = "landinpage.html";
+}
 function preventBack() { 
     window.history.forward();  
 } 
